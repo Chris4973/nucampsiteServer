@@ -18,7 +18,7 @@ promotionRouter.route('/')
     .then(promotion => {
         console.log('Partner Created ', promotion);
         res.statusCode = 200;
-        res.setHeader('Conttent-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
         res.json(promotion);
     })
     .catch(err => next(err));
@@ -42,7 +42,7 @@ promotionRouter.route('/:promotionId')
     Promotion.findById(req.params.promotionId)
     .then(promotion => {
         res.statusCode = 200;
-        res.setHeader('Conttent-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
         res.json(promotion);
     })
     .catch(err => next(err));
@@ -57,7 +57,7 @@ promotionRouter.route('/:promotionId')
     }, { new: true })
     .then(promotion => {
         res.statusCode = 200;
-        res.setHeader('Conttent-Type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
         res.json(promotion);
     })
     .catch(err => next(err));
